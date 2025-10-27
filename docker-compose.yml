@@ -1,0 +1,19 @@
+services:
+  adb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ".:/app"
+    working_dir: "/app"
+    restart: always
+    # command: "tail -F anything"
+    command: "bash /app/event.sh"
+    networks:
+      dockernat:
+        ipv4_address: 192.168.1.130
+
+networks:
+  dockernat:
+    external: true
+    name: br0
