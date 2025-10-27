@@ -3,6 +3,7 @@
 ## Features
 - Remap any buttons like: HOME_BUTTON, NETFLIX_BUTTON, ...
 - Overload default app launcher on boot
+- Reboot on failure
 
 ## Overview
 
@@ -15,8 +16,12 @@
 ```shell
 git clone git@github.com:guillian77/fire-tv-remote-event-remapper.git
 ```
-2. Edit `DEVICE_IP` with your Fire TV IP address under `event.sh`
-3. Start up the stack
+2. Copy or rename `config.sh.sample` to `config.sh`
+3. Edit `DEVICE_IP` with your Fire TV IP address under `config.sh`
+4. Start up the stack
+```shell
+docker compose up -d
+```
 
 ## Listen events
 
@@ -36,6 +41,8 @@ REMAP NETFLIX BUTTON
 <img width="826" height="96" alt="image" src="https://github.com/user-attachments/assets/1039861d-49c9-46cd-b504-a6f69cdde18c" />
 
 ### Configure your event
+
+> Edit `events.sh` file and customize it with your own event codes.
 
 > You can listen your events and remap them has your needs by editing these lines.
 <img width="494" height="333" alt="image" src="https://github.com/user-attachments/assets/281edc9e-88d6-4828-9674-063f78709a31" />

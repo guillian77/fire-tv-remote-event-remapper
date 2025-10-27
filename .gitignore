@@ -1,0 +1,7 @@
+# Project ignores
+config.sh
+
+# UNRAID specific files
+docker-compose.override.yml
+autostart
+name

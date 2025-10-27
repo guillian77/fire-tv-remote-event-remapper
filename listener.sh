@@ -1,26 +1,7 @@
 #!/usr/bin/env bash
+#encoding=utf8
 
-# ----------------------------------------------------------------------------------------------------------------------
-# CONFIG
-# ----------------------------------------------------------------------------------------------------------------------
-
-# IP address of your device.
-DEVICE_IP="192.168.XXX.XXX"
-
-# Device port (default: 5555)
-# Generally does not need to edit this parameter.
-DEVICE_PORT=5555
-
-# Delay before an event is triggered and starting the app.
-# Try to increase by 0.15 needed.
-BOOT_DELAY=0.15
-
-# ----------------------------------------------------------------------------------------------------------------------
-# APPS
-# ----------------------------------------------------------------------------------------------------------------------
-
-WOLF_FIRE_LAUNCHER="com.wolf.firelauncher/com.wolf.firelauncher.screens.launcher.LauncherActivity"
-PLEX="com.plexapp.android/com.plexapp.plex.activities.SplashActivity"
+source "./config.sh"
 
 # ----------------------------------------------------------------------------------------------------------------------
 # FUNCTIONS
@@ -68,18 +49,5 @@ echo "Monitoring events"
 adb shell getevent -l | while IFS= read -r line; do
     echo "$line"
 
-    # Remap: Home
-    if [[ "$line" == *"Amazon Fire TV Remote"* ]];then
-        start_app "$WOLF_FIRE_LAUNCHER"
-    fi
-
-    # Remap: Home
-    if [[ "$line" == *"000c0223"* ]];then
-        start_app "$WOLF_FIRE_LAUNCHER"
-    fi
-
-    # Remap: Netflix
-    if [[ "$line" == *"02e8"* ]];then
-        start_app "$PLEX"
-    fi
+    source "./events.sh"
 done
