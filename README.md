@@ -10,6 +10,11 @@
 <img width="852" height="562" alt="image" src="https://github.com/user-attachments/assets/0c16e576-3dee-4009-83b8-c87a08a6f2c6" />
 
 
+## Requirements
+
+- Enable ADB debug under `Settings` > `My Fire TB` > `Developper options`
+- Get your Fire TV IP address
+
 ## Install
 
 1. Clone repository
@@ -22,6 +27,9 @@ git clone git@github.com:guillian77/fire-tv-remote-event-remapper.git
 ```shell
 docker compose up -d
 ```
+5. Accept console debugging access on your Fire TV.
+
+> ℹ️ Maintain "Play/Pause" button and "OK" to force Fire TV restart.
 
 ## Listen events
 
