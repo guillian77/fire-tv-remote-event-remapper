@@ -1,5 +1,11 @@
 # Fire TV remove event remapper
 
+## Features
+- Remap any buttons like: HOME_BUTTON, NETFLIX_BUTTON, ...
+- Overload default app launcher on boot
+
+## Overview
+
 <img width="852" height="562" alt="image" src="https://github.com/user-attachments/assets/0c16e576-3dee-4009-83b8-c87a08a6f2c6" />
 
 
